@@ -45,7 +45,6 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
 
     implementation 'com.google.android.material:material:1.2.0-alpha04' // material design
-//    implementation 'com.github.StevenDXC:DxLoadingButton:2.2' //progress button
-
-    implementation 'com.github.razir.progressbutton:progressbutton:2.0.0'
+    implementation 'com.github.razir.progressbutton:progressbutton:2.0.0' //progress button
+    implementation 'com.github.florent37:materialtextfield:1.0.7' //material text field
 }

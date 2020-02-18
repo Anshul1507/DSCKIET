@@ -36,7 +36,9 @@
         android:autofillHints="true"
         android:fontFamily="@font/nunito"
         android:hint="@string/password"
+        android:textColorHint="@color/white"
         android:inputType="textPassword"
+
         android:textSize="16sp"
         tools:targetApi="o" />
 

@@ -19,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val arrayColors = intArrayOf(R.array.progressColors)
         bindProgressButton(button_login)
         bindProgressButton(button_register)
 
@@ -30,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
             button_login.attachTextChangeAnimator()
             button_login.showProgress {
                 buttonTextRes = R.string.loading
-                progressColor = Color.WHITE
+                progressColors = arrayColors
             }
         }
         button_register.setOnClickListener {
@@ -38,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
             button_register.attachTextChangeAnimator()
             button_register.showProgress {
                 buttonTextRes = R.string.loading
-                progressColor = Color.WHITE
+                progressColors = arrayColors
             }
         }
 
@@ -48,17 +49,10 @@ class LoginActivity : AppCompatActivity() {
         text_register_to_login.setOnClickListener {
             showLogin()
         }
-
-
-        image_login_skip.setOnClickListener {
-//            Handler().postDelayed({
-                //            showLogin()
-
+        
+        fab_skip_login.setOnClickListener {
                 finish()
                 overridePendingTransition(R.anim.no_animation,R.anim.slide_down)
-//            }, 500)
-//            this.finish()
-//          startActivity(Intent(this,HomeActivity::class.java))
         }
     }
 

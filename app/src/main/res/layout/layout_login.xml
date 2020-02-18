@@ -1,64 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/semi_circle"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
-    android:padding="26dp"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/login_user_email"
+    <LinearLayout
+        android:id="@+id/section_login_image"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/login_image"
+            />
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_skip_login"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/section_login_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-30dp"
+        app:backgroundTint="@color/white"
+        android:padding="4dp"
+        android:src="@drawable/ic_close"
+        />
+    <LinearLayout
+        android:id="@+id/section_login_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="true"
-        android:fontFamily="@font/nunito"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:textSize="16sp"
-        tools:targetApi="o" />
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_below="@id/fab_skip_login"
+        >
 
-    <EditText
-        android:id="@+id/login_user_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints="true"
-        android:fontFamily="@font/nunito"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:textSize="16sp"
-        tools:targetApi="o" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textAlignment="center"
 
+            />
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mtf_labelColor="@color/white"
+            app:mtf_image="@drawable/ic_mail"
+            app:mtf_animationDuration="500"
+            android:paddingLeft="8dp"
+            app:mtf_openKeyboardOnFocus="true"
+            tools:ignore="RtlSymmetry"
+            android:paddingStart="8dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:textColorHint="@color/textColor"
+                android:textColor="@color/textColor"
+                android:textSize="15sp"
+                android:inputType="text"
+                android:autofillHints="true"
+                tools:targetApi="o" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <com.github.florent37.materialtextfield.MaterialTextField
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mtf_labelColor="@color/white"
+            app:mtf_image="@drawable/ic_mail"
+            app:mtf_animationDuration="500"
+            android:paddingLeft="8dp"
+            app:mtf_openKeyboardOnFocus="true"
+            tools:ignore="RtlSymmetry"
+            android:paddingStart="8dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:textColor="@color/textColor"
+                android:textColorHint="@color/white"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:autofillHints="true"
+                tools:targetApi="o" />
+
+        </com.github.florent37.materialtextfield.MaterialTextField>
+
+        <TextView
+            android:id="@+id/text_forget_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forget Password?"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="end"
+            android:layout_marginTop="8dp"
+            />
     <Button
         android:id="@+id/button_login"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
+        android:background="@drawable/button_bg"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:fontFamily="@font/nunito_semibold"
         android:textAllCaps="false"
+
         />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/text_login_to_register"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click to Register"
+        android:text="Click Here to Register"
         android:fontFamily="@font/nunito"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         />
-<!--    <TextView-->
-<!--        android:id="@+id/text_login_skip"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Skip"-->
-<!--        android:fontFamily="@font/nunito"-->
-<!--        android:textSize="20sp"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        />-->
 
-</LinearLayout>
+</RelativeLayout>
