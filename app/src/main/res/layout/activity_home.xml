@@ -17,7 +17,7 @@
             android:id="@+id/text_home_to_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home Page"
+            android:text="Click Here to Register"
             android:textSize="20sp"
             android:fontFamily="@font/nunito"
             />
